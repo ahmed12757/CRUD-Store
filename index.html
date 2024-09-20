@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- data-bs-theme="dark" -->
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="icon" href="./imgs/shopping-cart.svg">
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/madia.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mt-5">Product Management System</h1>
+      <form action="">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="name@example.com"
+            autocomplete="off"
+            save="fulse"
+            oninput="validate( NameRegex , NameInput)"
+          />
+          <label for="name">name</label>
+          <p class="error text-danger d-none mt-1"> you should start capetal leter thin 3 smole leter at list</p>
+        </div>
+        <div class="form-floating">
+          <input
+            autocomplete="off"
+            save="fulse"
+            type="text"
+            class="form-control mt-4"
+            id="cotegory"
+            placeholder="Password"
+            list="category-list"
+            oninput="validate( cotegoryeRegex, cotegoryInput)"
+          />
+          <label for="cotegory">cotegory</label>
+          <p class="error text-danger d-none mt-1"> you must enter start capetal leter thin 3 smole leter at list</p>
+          <datalist id="category-list">
+            <option>Mobile</option>
+            <option>Laptop</option>
+            <option>Camera</option>
+            <option>Clothes</option>
+            <option>Screen</option>
+          </datalist>
+        </div>
+        <div class="form-floating">
+          <input
+            autocomplete="off"
+            save="fulse"
+            type="number"
+            class="form-control mt-4"
+            id="price"
+            placeholder="Password"
+            oninput="validate( PriceRegex, priceInput)"
+          />
+          <label for="price">price</label>
+          <p class="error text-danger d-none mt-1"> you must enter positive number</p>
+        </div>
+        <div class="form-floating">
+          <textarea
+            class="form-control mt-4"
+            id="descriotion"
+            placeholder="Password"
+            oninput="validate( DescriotionRegex, descriotionInput)"
+          ></textarea>
+          <label for="descriotion">Descriotion</label>
+          <p class="error text-danger d-none mt-1"> you must enter more than 25 characters</p>
+        </div>
+        <div>
+          <input
+            multiple
+            type="file"
+            id="getimg"
+            class="mt-4 w-100 form-control"
+            placeholder="Password"
+            accept="image/*"
+          />
+        </div>
+        <button
+          type="button"
+          class="mt-4 btn btn-primary"
+          onclick="addproduct()"
+          id="AddBtn"
+        >
+          Add Product
+        </button>
+        <button
+          type="button"
+          class="mt-4 btn btn-primary d-none"
+          onclick="updateElement()"
+          id="UpdateBtn"
+        >
+          UpdateProduct
+        </button>
+      </form>
+      <input
+        type="search"
+        class="form-control mt-4 w-75 mx-auto"
+        placeholder="sesrch for products ...."
+        oninput="SearchProduct()"
+        id="search"
+      />
+      <div class="row my-5" id="ProductContenar"></div>
+    </div>
+    <script src="./java/bootstrap.bundle.min.js"></script>
+    <script src="./java/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+input,
+textarea {
+  background-color: #444 !important;
+}
+.form-floating > .form-control-plaintext ~ label::after,
+.form-floating > .form-control:focus ~ label::after,
+.form-floating > .form-control:not(:placeholder-shown) ~ label::after,
+.form-floating > .form-select ~ label::after {
+  background-color: transparent !important;
+}
+.inner{
+  background-color: #444 !important;
+  border-radius: 10px;
+  transition:all .5s  ;
+}
+figure{
+  overflow: hidden;
+}
+img{
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  transition:transform .8s  ;
+}
+figure:hover img{
+  transform: scale(1.1);
+
+}
+.inner:hover{
+  box-shadow: 7px 5px 0px 0px #ffffff40;
+  transform: translate(-7px ,-5px);
+}
